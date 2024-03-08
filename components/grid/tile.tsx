@@ -12,6 +12,7 @@ export function GridTileImage({
   active?: boolean;
   label?: {
     title: string;
+    image: string;
     amount: string;
     currencyCode: string;
     position?: 'bottom' | 'center';
@@ -31,7 +32,7 @@ export function GridTileImage({
       {props.src ? (
         // eslint-disable-next-line jsx-a11y/alt-text -- `alt` is inherited from `props`, which is being enforced with TypeScript
         <Image
-          className={clsx('relative h-full w-full object-contain', {
+          className={clsx('relative rounded-md object-contain opacity-95', {
             'transition duration-300 ease-in-out group-hover:scale-105': isInteractive
           })}
           {...props}
@@ -40,6 +41,7 @@ export function GridTileImage({
       {label ? (
         <Label
           title={label.title}
+          image={label.image}
           amount={label.amount}
           currencyCode={label.currencyCode}
           position={label.position}

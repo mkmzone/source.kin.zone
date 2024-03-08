@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
 import Search from './search';
+import Image from 'next/image';
 const { SITE_NAME } = process.env;
 
 export default async function Navbar() {
@@ -20,8 +21,14 @@ export default async function Navbar() {
       <div className="flex w-full items-center">
         <div className="flex w-full md:w-1/3">
           <Link href="/" className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6">
-            <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
+            <Image
+              src="https://cdn.shopify.com/s/files/1/0862/2528/9533/files/source.kin.zone_logo.png?v=1709671727"
+              alt="img name"
+              width={35}
+              height={35}
+              className="rounded-md"
+            />
+            <div className="text-extrabold ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
               {SITE_NAME}
             </div>
           </Link>
